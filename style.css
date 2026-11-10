@@ -72,3 +72,17 @@ footer{background:#050607;border-top:1px solid #24282b}
 .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}.reveal.is-visible{opacity:1;transform:none}
 @media(max-width:700px){.deck-grid{grid-template-columns:1fr;gap:0;padding:35px 0 20px}.deck-copy h2{font-size:39px}.orbit-panel{height:330px;transform:scale(.88);transform-origin:center}.ring-c{width:330px}.orbit-sweep{width:330px;height:330px}.node-a{top:3%;left:34%}.node-b{right:-2%;top:44%}.node-c{bottom:3%;left:28%}.node-d{left:-2%;top:43%}.deck-top,.deck-bottom{font-size:7px}.command-deck{padding-inline:20px}}
 @media(prefers-reduced-motion:reduce){.orbit-ring,.orbit-sweep,.orbit-node,.deck-top i{animation:none!important}.reveal{opacity:1;transform:none;transition:none}}
+
+
+/* Text-only brand tiles: no logo artwork or image assets */
+.brand-cloud{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:9px;margin:38px 0 18px}
+.brand-tag{position:relative;min-height:54px;display:flex;align-items:center;gap:11px;padding:10px 13px;overflow:hidden;border:1px solid #3b3d3e;border-radius:3px;background:linear-gradient(115deg,#17191b,#101214);color:#e9e7df;transition:transform .22s,border-color .22s,background .22s}
+.brand-tag:nth-child(4n+1){border-left:3px solid var(--gold)}
+.brand-tag:nth-child(4n+2){border-left:3px solid var(--signal-red)}
+.brand-tag:nth-child(4n+3){border-left:3px solid var(--signal-green)}
+.brand-tag:nth-child(4n){border-left:3px solid #777}
+.brand-tag small{font:700 8px Manrope;letter-spacing:.08em;color:#85898a}
+.brand-tag b{font:700 10px Manrope;letter-spacing:.035em}
+.brand-tag i{position:absolute;width:30px;height:30px;right:-13px;bottom:-17px;border:1px solid #ffffff14;transform:rotate(45deg)}
+.brand-tag:hover{transform:translateY(-3px);border-color:var(--gold);background:linear-gradient(115deg,#242019,#121416)}
+@media(max-width:650px){.brand-cloud{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin-top:25px}.brand-tag{min-height:48px;padding:9px 10px;gap:8px}.brand-tag b{font-size:9px}}
