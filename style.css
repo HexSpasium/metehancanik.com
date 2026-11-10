@@ -198,3 +198,29 @@ section[id]{scroll-margin-top:92px}
 }
 @media(max-width:420px){.signal-map{width:112%;max-width:none;margin-left:-6%}.signal-map-footer span:last-child{width:100%}}
 @media(prefers-reduced-motion:reduce){.route-line,.signal-map-meta i,.point-main circle:first-child,.map-scan path{animation:none!important}.signal-packets{display:none}}
+
+
+/* === HERO PORTRAIT: CYBER SIGNAL FLOW === */
+.hero-portrait{isolation:isolate}
+.hero-portrait:before{content:"";position:absolute;z-index:2;inset:6px max(0px,calc((100% - 438px)/2)) 0;pointer-events:none;border:1px solid transparent;background:linear-gradient(135deg,#e4b84f 0%,transparent 24%,#39b879 52%,transparent 73%,#e3473f 100%) border-box;-webkit-mask:linear-gradient(#000 0 0) padding-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:.8;animation:portraitFrameGlow 6s linear infinite}
+.hero-portrait:after{content:"";position:absolute;z-index:1;pointer-events:none;left:calc(50% - min(50%,210px) + 9px);right:calc(50% - min(50%,210px) + 9px);top:9px;height:calc(100% - 9px);background:linear-gradient(180deg,transparent 0%,#39b87908 40%,#39b87938 50%,#e4b84f18 53%,transparent 62%);background-size:100% 220%;animation:portraitScan 7s ease-in-out infinite;mix-blend-mode:screen}
+.hero-portrait>img{position:relative;z-index:0;border:1px solid #e4b84f88;box-shadow:0 0 0 1px #39b87920,0 0 28px #39b87916,20px 20px 0 #e4b84f12,-20px -20px 0 #39b8790b;animation:portraitImagePulse 5s ease-in-out infinite}
+.portrait-label{z-index:4;overflow:hidden;border:1px solid #e4b84f88;box-shadow:0 15px 40px #0007,0 0 24px #39b87918;animation:labelSignal 5s ease-in-out infinite}
+.portrait-label:before{content:"";position:absolute;top:0;bottom:0;left:-45%;width:35%;background:linear-gradient(90deg,transparent,#ffffff65,#39b87955,transparent);transform:skewX(-22deg);animation:labelSweep 5.8s ease-in-out infinite}
+.portrait-label:after{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:linear-gradient(90deg,transparent,var(--signal-green),var(--gold),transparent);background-size:200% 100%;animation:labelEdgeFlow 3.5s linear infinite}
+.portrait-label small,.portrait-label b,.portrait-label span{position:relative;z-index:1}
+.portrait-index{z-index:3;text-shadow:0 0 12px #39b87944}
+@keyframes portraitFrameGlow{0%{filter:drop-shadow(0 0 2px #39b87955);opacity:.5}50%{filter:drop-shadow(0 0 9px #e4b84f99);opacity:1}100%{filter:drop-shadow(0 0 2px #39b87955);opacity:.5}}
+@keyframes portraitScan{0%,12%{background-position:0 -130%}65%,100%{background-position:0 130%}}
+@keyframes portraitImagePulse{0%,100%{box-shadow:0 0 0 1px #39b87920,0 0 22px #39b87912,20px 20px 0 #e4b84f12,-20px -20px 0 #39b8790b}50%{box-shadow:0 0 0 1px #e4b84f66,0 0 34px #39b87930,20px 20px 0 #e4b84f1c,-20px -20px 0 #39b87915}}
+@keyframes labelSweep{0%,18%{left:-45%}72%,100%{left:130%}}
+@keyframes labelEdgeFlow{to{background-position:200% 0}}
+@keyframes labelSignal{0%,100%{border-color:#e4b84f88}50%{border-color:#39b879aa}}
+@media(max-width:650px){
+ .hero-portrait:before{inset:4px max(0px,calc((100% - 78vw)/2)) 0}
+ .hero-portrait:after{left:calc(11% + 9px);right:calc(11% + 9px)}
+ .portrait-label{left:0;max-width:min(82vw,300px)}
+}
+@media(prefers-reduced-motion:reduce){
+ .hero-portrait:before,.hero-portrait:after,.hero-portrait>img,.portrait-label,.portrait-label:before,.portrait-label:after{animation:none!important}
+}
