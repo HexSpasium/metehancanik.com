@@ -267,3 +267,20 @@ section[id]{scroll-margin-top:92px}
 .contact-details small{font:700 8px Manrope;letter-spacing:.16em;color:#929795}
 .contact-details b{font:700 12px Manrope;overflow-wrap:anywhere}
 @media(max-width:600px){.contact-details{display:grid;grid-template-columns:1fr}.contact-details>a{min-width:0}.contact-details b{font-size:11px}}
+
+
+/* === TOP PORTFOLIO ANNOUNCEMENT === */
+.portfolio-announcement{position:relative;z-index:5;overflow:hidden;padding:17px 6vw;background:linear-gradient(105deg,#171b1c 0%,#202017 48%,#15191a 100%);border-bottom:1px solid #e4b84f66;color:#eee}
+.portfolio-announcement:before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(100deg,transparent 10%,#39b8790b 48%,#e4b84f12 60%,transparent 80%);transform:translateX(-100%);animation:announcementSweep 9s ease-in-out infinite}
+.announcement-inner{position:relative;max-width:1250px;margin:auto;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:24px}
+.announcement-kicker{white-space:nowrap;font:800 8px Manrope;letter-spacing:.16em;color:var(--gold)}
+.announcement-kicker i{display:inline-block;width:7px;height:7px;margin-right:8px;border-radius:50%;background:var(--signal-green);box-shadow:0 0 12px var(--signal-green);animation:signalPulse 1.8s infinite}
+.announcement-inner p{margin:0;color:#c5cbc6;font-size:10px;line-height:1.8}
+.announcement-inner p strong{color:#fff;font-weight:700}
+.announcement-inner>a{display:inline-flex;align-items:center;gap:12px;padding:10px 13px;border:1px solid #e4b84f88;color:var(--gold);font:800 8px Manrope;letter-spacing:.12em;white-space:nowrap;transition:background .2s,color .2s,transform .2s}
+.announcement-inner>a:hover{background:var(--gold);color:#101214;transform:translateY(-2px)}
+.announcement-inner>a b{font-size:15px}
+@keyframes announcementSweep{0%,35%{transform:translateX(-100%)}75%,100%{transform:translateX(100%)}}
+@media(max-width:900px){.announcement-inner{grid-template-columns:1fr auto;gap:9px 18px}.announcement-kicker{grid-column:1/-1}.announcement-inner p{grid-column:1}.announcement-inner>a{grid-column:2;grid-row:2}}
+@media(max-width:600px){.portfolio-announcement{padding:15px 20px}.announcement-inner{grid-template-columns:1fr;gap:10px}.announcement-kicker,.announcement-inner p,.announcement-inner>a{grid-column:1;grid-row:auto}.announcement-inner p{font-size:10px}.announcement-inner>a{justify-self:start;margin-top:3px}}
+@media(prefers-reduced-motion:reduce){.portfolio-announcement:before,.announcement-kicker i{animation:none!important}}
