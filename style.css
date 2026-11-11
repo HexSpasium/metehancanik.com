@@ -313,3 +313,14 @@ section[id]{scroll-margin-top:92px}
 .map-loading{display:grid;place-items:center;height:100%;min-height:330px;color:#c8b16d;font:700 10px Manrope;letter-spacing:.2em}
 @media(max-width:700px){.signal-map-real{height:420px;min-height:420px}.signal-map-real .leaflet-tooltip.map-city-label{font-size:9px;padding:3px 5px}.signal-map-real .leaflet-control-attribution{font-size:8px!important}}
 @media(prefers-reduced-motion:reduce){.signal-map-real *{scroll-behavior:auto!important}}
+
+
+/* === STATIC NASA NIGHT-LIGHTS MAP === */
+.signal-map-static{position:relative;margin:0;width:100%;overflow:hidden;background:#080d17;border:1px solid #c9a34d55;box-shadow:0 18px 55px #0008}
+.signal-map-static:after{content:"";position:absolute;inset:0;pointer-events:none;border:1px solid #ffffff12;box-shadow:inset 0 0 65px #03060d88}
+.signal-map-static img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;object-position:center;filter:brightness(.82) contrast(1.08) saturate(.86)}
+.signal-map-static figcaption{position:absolute;right:12px;bottom:10px;z-index:1;padding:5px 8px;background:#080d17d9;border:1px solid #d8b65a66;color:#d8c58f;font:700 8px Manrope;letter-spacing:.13em}
+.signal-city-index{display:flex;flex-wrap:wrap;gap:7px;margin:13px 0 0}
+.signal-city-index span{padding:6px 9px;border:1px solid #ffffff1b;background:#ffffff06;color:#c4cbc5;font:600 10px Manrope;letter-spacing:.04em}
+.signal-city-index span b{margin-left:5px;color:#e4b84f;font-size:8px;letter-spacing:.1em}
+@media(max-width:600px){.signal-map-static img{aspect-ratio:4/3;object-position:center}.signal-map-static figcaption{font-size:6px;right:7px;bottom:7px}.signal-city-index{gap:5px}.signal-city-index span{font-size:9px;padding:5px 7px}}
