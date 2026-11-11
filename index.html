@@ -78,35 +78,60 @@
     </div>
     <div class="signal-map-frame">
       <div class="signal-map-meta"><span><i></i> NETWORK VISUALIZATION</span><span>MC / ROUTE MATRIX — 2026</span></div>
-      <div class="signal-map-stage">
-        <img class="signal-map-image" src="assets/Türkiye%20Merkezli%20Gece%20Uydu%20Haritası.png" alt="Türkiye merkezli Avrupa, Akdeniz ve Orta Doğu gece uydu haritası" loading="lazy" decoding="async">
-        <svg class="signal-map-routes" viewBox="0 0 1000 560" preserveAspectRatio="none" aria-hidden="true">
-          <defs><filter id="routeGlow"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
-          <g class="route-strokes" filter="url(#routeGlow)">
-            <path d="M430 335 Q390 235 380 185"/><path d="M430 335 Q470 250 520 210"/><path d="M430 335 Q450 345 485 340"/><path d="M430 335 Q400 380 385 410"/><path d="M430 335 Q350 330 315 300"/><path d="M430 335 Q315 220 270 185"/><path d="M430 335 Q590 270 665 280"/><path d="M430 335 Q680 350 790 410"/><path d="M430 335 Q310 300 285 350"/>
-          </g>
-          <g class="route-packets">
-            <circle r="4"><animateMotion dur="4.8s" repeatCount="indefinite" path="M430 335 Q390 235 380 185"/></circle>
-            <circle r="4"><animateMotion dur="5.6s" begin="-2s" repeatCount="indefinite" path="M430 335 Q470 250 520 210"/></circle>
-            <circle r="4"><animateMotion dur="6.2s" begin="-3s" repeatCount="indefinite" path="M430 335 Q680 350 790 410"/></circle>
-            <circle r="4"><animateMotion dur="5.2s" begin="-1s" repeatCount="indefinite" path="M430 335 Q590 270 665 280"/></circle>
-          </g>
-        </svg>
-        <div class="signal-city city-mersin"><span class="city-beacon"></span><span class="city-label"><b>🇹🇷 MERSİN</b><small>MERKEZ NOKTA</small></span></div>
-        <div class="signal-city city-istanbul"><span class="city-beacon"></span><span class="city-label">🇹🇷 İSTANBUL</span></div>
-        <div class="signal-city city-ankara"><span class="city-beacon"></span><span class="city-label">🇹🇷 ANKARA</span></div>
-        <div class="signal-city city-adana"><span class="city-beacon"></span><span class="city-label">🇹🇷 ADANA</span></div>
-        <div class="signal-city city-antalya"><span class="city-beacon"></span><span class="city-label">🇹🇷 ANTALYA</span></div>
-        <div class="signal-city city-izmir"><span class="city-beacon"></span><span class="city-label">🇹🇷 İZMİR</span></div>
-        <div class="signal-city city-aydin"><span class="city-beacon"></span><span class="city-label">🇹🇷 AYDIN</span></div>
-        <div class="signal-city city-podgorica"><span class="city-beacon"></span><span class="city-label">🇲🇪 PODGORICA<small>KARADAĞ</small></span></div>
-        <div class="signal-city city-tehran"><span class="city-beacon"></span><span class="city-label">🇮🇷 TAHRAN</span></div>
-        <div class="signal-city city-kandahar"><span class="city-beacon"></span><span class="city-label">🇦🇫 KANDAHAR</span></div>
-        <div class="map-scanline" aria-hidden="true"></div>
-      </div>
-      <div class="signal-map-footer"><span><b>10</b> COĞRAFİ NOKTA</span><span><b>MC GLOBAL NETWORK</b> TÜRKİYE MERKEZLİ</span><span>SABİT UYDU GÖRSELİ / HAREKETLİ ROTALAR</span></div>
+      <svg class="signal-map" viewBox="0 0 1000 470" role="img" aria-labelledby="worldMapTitle worldMapDesc">
+        <title id="worldMapTitle">Metehan Canik coğrafi bağlantı haritası</title>
+        <desc id="worldMapDesc">Türkiye, Balkanlar, Avrupa, Orta Doğu ve Orta Asya çevresindeki şehirleri birbirine bağlayan animasyonlu sinyal çizgileri.</desc>
+        <defs>
+          <linearGradient id="routeGold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e4b84f"/><stop offset="1" stop-color="#39b879"/></linearGradient>
+          <radialGradient id="mapGlow"><stop stop-color="#39b879" stop-opacity=".16"/><stop offset="1" stop-color="#39b879" stop-opacity="0"/></radialGradient>
+          <pattern id="mapGrid" width="42" height="42" patternUnits="userSpaceOnUse"><path d="M42 0H0V42" fill="none" stroke="#ffffff" stroke-opacity=".055" stroke-width="1"/></pattern>
+        </defs>
+        <rect width="1000" height="470" fill="url(#mapGrid)"/>
+        <ellipse cx="555" cy="230" rx="300" ry="210" fill="url(#mapGlow)"/>
+        <g class="continent" fill="#26302f" stroke="#62706a" stroke-opacity=".45" stroke-width="1.2">
+          <path d="M65 93 105 58 168 45 207 62 232 91 220 119 191 127 174 154 145 158 128 187 98 179 81 147 55 130Z"/>
+          <path d="M194 194 228 183 256 203 269 239 254 277 242 320 219 361 202 331 207 290 187 260 176 222Z"/>
+          <path d="M390 82 425 62 475 67 505 86 541 77 580 90 607 76 653 91 690 78 736 97 782 88 831 105 875 128 910 155 891 178 852 180 830 204 795 194 768 216 731 203 699 218 672 197 642 209 618 188 585 198 559 178 530 189 503 168 475 177 454 154 420 156 398 129Z"/>
+          <path d="M470 198 501 189 532 211 544 247 529 288 510 333 487 362 466 334 455 292 443 256 448 220Z"/>
+          <path d="M620 232 659 218 696 232 723 263 709 300 680 321 647 306 625 275Z"/>
+          <path d="M760 292 794 278 830 290 847 318 828 344 794 350 770 329Z"/>
+          <path d="M858 367 883 357 906 371 897 392 872 398 854 385Z"/>
+        </g>
+        <g class="map-latitudes" fill="none" stroke="#dce4dc" stroke-opacity=".09" stroke-width="1"><path d="M0 117H1000M0 235H1000M0 353H1000"/><path d="M250 0V470M500 0V470M750 0V470"/></g>
+        <g class="signal-routes" fill="none" stroke="url(#routeGold)" stroke-width="2.2" stroke-linecap="round">
+          <path d="M558 242 Q540 190 522 170" class="route-line"/>
+          <path d="M558 242 Q580 210 594 200" class="route-line route-delay-1"/>
+          <path d="M558 242 Q520 270 486 258" class="route-line route-delay-2"/>
+          <path d="M558 242 Q600 265 625 286" class="route-line route-delay-3"/>
+          <path d="M558 242 Q650 190 700 180" class="route-line route-delay-1"/>
+          <path d="M558 242 Q680 250 756 300" class="route-line route-delay-2"/>
+          <path d="M558 242 Q725 285 824 340" class="route-line route-delay-3"/>
+          <path d="M558 242 Q390 175 315 155" class="route-line route-delay-1"/>
+          <path d="M558 242 Q355 235 270 260" class="route-line route-delay-2"/>
+        </g>
+        <g class="signal-packets" fill="#e4b84f">
+          <circle r="3.5"><animateMotion dur="5.5s" repeatCount="indefinite" path="M558 242 Q540 190 522 170"/></circle>
+          <circle r="3"><animateMotion dur="6.5s" begin="-2s" repeatCount="indefinite" path="M558 242 Q600 265 625 286"/></circle>
+          <circle r="3"><animateMotion dur="7s" begin="-3s" repeatCount="indefinite" path="M558 242 Q680 250 756 300"/></circle>
+          <circle r="3"><animateMotion dur="8s" begin="-1s" repeatCount="indefinite" path="M558 242 Q355 235 270 260"/></circle>
+        </g>
+        <g class="map-points">
+          <g class="map-point point-main"><circle cx="558" cy="242" r="18"/><circle cx="558" cy="242" r="5"/><text x="581" y="247">MERSİN</text><text class="point-sub" x="581" y="261">MERKEZ NOKTA</text></g>
+          <g class="map-point"><circle cx="522" cy="170" r="5"/><text x="500" y="151">İSTANBUL</text></g>
+          <g class="map-point"><circle cx="594" cy="200" r="5"/><text x="607" y="194">ANKARA</text></g>
+          <g class="map-point"><circle cx="486" cy="258" r="5"/><text x="448" y="279">ADANA</text></g>
+          <g class="map-point"><circle cx="625" cy="286" r="5"/><text x="637" y="302">ANTALYA</text></g>
+          <g class="map-point"><circle cx="700" cy="180" r="5"/><text x="711" y="171">PODGORICA</text></g>
+          <g class="map-point"><circle cx="756" cy="300" r="5"/><text x="768" y="296">TAHRAN</text></g>
+          <g class="map-point"><circle cx="824" cy="340" r="5"/><text x="836" y="345">KANDAHAR</text></g>
+          <g class="map-point"><circle cx="315" cy="155" r="5"/><text x="278" y="137">İZMİR</text></g>
+          <g class="map-point"><circle cx="270" cy="260" r="5"/><text x="226" y="280">AYDIN</text></g>
+        </g>
+        <g class="map-scan"><path d="M0 0V470"/></g>
+      </svg>
+      <div class="signal-map-footer"><span><b>10</b> GÖRSEL BAĞLANTI NOKTASI</span><span><b>LIVE-STYLE</b> ANİMASYON</span><span>ŞEMATİK / TEMSİLİ HARİTA</span></div>
     </div>
-    <p class="signal-map-note">Uydu haritası sabit bir görseldir. Şehir işaretçileri, ülke bayrakları ve bağlantı ışıkları portföyde adı geçen coğrafi noktaları temsil eder; canlı konum takibi içermez.</p>
+    <p class="signal-map-note">Harita, özgeçmişte ve seyahat anlatılarında adı geçen şehirlerden oluşturulmuş temsili bir görselleştirmedir; canlı konum veya gerçek zamanlı takip içermez.</p>
   </div>
 </section>
 <section class="closing" id="iletisim"><div><p class="eyebrow">METEHAN CANİK / PROFESSIONAL PORTFOLIO</p><h2>Her deneyim,<br><em>bir sonraki adımın parçası.</em></h2><p>Özgeçmiş bilgileri ve kişisel fotoğraf arşivinden hazırlanan profesyonel portföy.</p>
