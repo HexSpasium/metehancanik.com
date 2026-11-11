@@ -286,3 +286,11 @@ section[id]{scroll-margin-top:92px}
 @media(prefers-reduced-motion:reduce){.portfolio-announcement:before,.announcement-kicker i{animation:none!important}}
 
 
+
+
+/* Brand tiles are official outbound links */
+.brand-cloud a.brand-tag{display:flex;align-items:center;text-decoration:none;cursor:pointer}
+.brand-cloud a.brand-tag:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+.brand-cloud a.brand-tag:hover{border-color:var(--gold);box-shadow:0 0 22px #e4b84f1c}
+.brand-cloud a.brand-tag:hover i{transform:scale(1.5);box-shadow:0 0 12px currentColor}
+.brand-cloud a.brand-tag i{transition:transform .2s,box-shadow .2s}
