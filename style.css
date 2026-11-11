@@ -256,3 +256,14 @@ section[id]{scroll-margin-top:92px}
 .refs article{display:flex;align-items:stretch;min-height:150px}
 .refs article>div{width:100%;padding:24px}
 @media(max-width:650px){.refs article{display:block;min-height:0}.refs article>div{padding:18px}}
+
+
+/* Contact details in closing section */
+.contact-details{display:flex;flex-wrap:wrap;gap:12px;margin:28px 0 25px}
+.contact-details>a{display:flex;align-items:center;gap:12px;min-width:245px;padding:13px 16px;border:1px solid #ffffff2b;background:#ffffff08;color:#f0eee8;transition:border-color .2s,transform .2s,background .2s}
+.contact-details>a:hover{border-color:var(--gold);background:#e4b84f0d;transform:translateY(-2px)}
+.contact-symbol{width:34px;height:34px;display:grid;place-items:center;border:1px solid #e4b84f77;color:var(--gold);font-size:17px}
+.contact-details>a>span:last-child{display:flex;flex-direction:column;gap:2px}
+.contact-details small{font:700 8px Manrope;letter-spacing:.16em;color:#929795}
+.contact-details b{font:700 12px Manrope;overflow-wrap:anywhere}
+@media(max-width:600px){.contact-details{display:grid;grid-template-columns:1fr}.contact-details>a{min-width:0}.contact-details b{font-size:11px}}
