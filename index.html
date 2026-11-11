@@ -78,16 +78,35 @@
     </div>
     <div class="signal-map-frame">
       <div class="signal-map-meta"><span><i></i> NETWORK VISUALIZATION</span><span>MC / ROUTE MATRIX — 2026</span></div>
-      <figure class="signal-map-static">
-        <img src="https://svs.gsfc.nasa.gov/vis/a030000/a030800/a030877/BlackMarble_2016_928m_mediterranean_labeled_print.jpg" alt="NASA Black Marble 2016 uydu verileriyle Akdeniz, Avrupa ve Orta Doğu'nun gece ışıkları haritası" loading="lazy" decoding="async">
-        <figcaption>NASA / GODDARD SPACE FLIGHT CENTER · BLACK MARBLE 2016</figcaption>
-      </figure>
-      <div class="signal-city-index" aria-label="Haritada anlatılan şehirler">
-        <span>Mersin <b>MERKEZ</b></span><span>İstanbul</span><span>Ankara</span><span>Adana</span><span>Antalya</span><span>İzmir</span><span>Aydın</span><span>Podgorica</span><span>Tahran</span><span>Kandahar</span>
+      <div class="signal-map-stage">
+        <img class="signal-map-image" src="assets/Türkiye%20Merkezli%20Gece%20Uydu%20Haritası.png" alt="Türkiye merkezli Avrupa, Akdeniz ve Orta Doğu gece uydu haritası" loading="lazy" decoding="async">
+        <svg class="signal-map-routes" viewBox="0 0 1000 560" preserveAspectRatio="none" aria-hidden="true">
+          <defs><filter id="routeGlow"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+          <g class="route-strokes" filter="url(#routeGlow)">
+            <path d="M430 335 Q390 235 380 185"/><path d="M430 335 Q470 250 520 210"/><path d="M430 335 Q450 345 485 340"/><path d="M430 335 Q400 380 385 410"/><path d="M430 335 Q350 330 315 300"/><path d="M430 335 Q315 220 270 185"/><path d="M430 335 Q590 270 665 280"/><path d="M430 335 Q680 350 790 410"/><path d="M430 335 Q310 300 285 350"/>
+          </g>
+          <g class="route-packets">
+            <circle r="4"><animateMotion dur="4.8s" repeatCount="indefinite" path="M430 335 Q390 235 380 185"/></circle>
+            <circle r="4"><animateMotion dur="5.6s" begin="-2s" repeatCount="indefinite" path="M430 335 Q470 250 520 210"/></circle>
+            <circle r="4"><animateMotion dur="6.2s" begin="-3s" repeatCount="indefinite" path="M430 335 Q680 350 790 410"/></circle>
+            <circle r="4"><animateMotion dur="5.2s" begin="-1s" repeatCount="indefinite" path="M430 335 Q590 270 665 280"/></circle>
+          </g>
+        </svg>
+        <div class="signal-city city-mersin"><span class="city-beacon"></span><span class="city-label"><b>🇹🇷 MERSİN</b><small>MERKEZ NOKTA</small></span></div>
+        <div class="signal-city city-istanbul"><span class="city-beacon"></span><span class="city-label">🇹🇷 İSTANBUL</span></div>
+        <div class="signal-city city-ankara"><span class="city-beacon"></span><span class="city-label">🇹🇷 ANKARA</span></div>
+        <div class="signal-city city-adana"><span class="city-beacon"></span><span class="city-label">🇹🇷 ADANA</span></div>
+        <div class="signal-city city-antalya"><span class="city-beacon"></span><span class="city-label">🇹🇷 ANTALYA</span></div>
+        <div class="signal-city city-izmir"><span class="city-beacon"></span><span class="city-label">🇹🇷 İZMİR</span></div>
+        <div class="signal-city city-aydin"><span class="city-beacon"></span><span class="city-label">🇹🇷 AYDIN</span></div>
+        <div class="signal-city city-podgorica"><span class="city-beacon"></span><span class="city-label">🇲🇪 PODGORICA<small>KARADAĞ</small></span></div>
+        <div class="signal-city city-tehran"><span class="city-beacon"></span><span class="city-label">🇮🇷 TAHRAN</span></div>
+        <div class="signal-city city-kandahar"><span class="city-beacon"></span><span class="city-label">🇦🇫 KANDAHAR</span></div>
+        <div class="map-scanline" aria-hidden="true"></div>
       </div>
-      <div class="signal-map-footer"><span><b>10</b> COĞRAFİ NOKTA</span><span><b>NASA BLACK MARBLE</b> UYDU GÖRÜNTÜSÜ</span><span>SABİT GÖRSEL / 2016 VERİSİ</span></div>
+      <div class="signal-map-footer"><span><b>10</b> COĞRAFİ NOKTA</span><span><b>MC GLOBAL NETWORK</b> TÜRKİYE MERKEZLİ</span><span>SABİT UYDU GÖRSELİ / HAREKETLİ ROTALAR</span></div>
     </div>
-    <p class="signal-map-note">Arka plan görseli NASA Goddard Space Flight Center'ın Black Marble 2016 gece ışıkları uydu kompozitidir. Şehir listesi portföyde adı geçen yerleri belirtir; görsel canlı konum veya gerçek zamanlı takip içermez. Kaynak: NASA.</p>
+    <p class="signal-map-note">Uydu haritası sabit bir görseldir. Şehir işaretçileri, ülke bayrakları ve bağlantı ışıkları portföyde adı geçen coğrafi noktaları temsil eder; canlı konum takibi içermez.</p>
   </div>
 </section>
 <section class="closing" id="iletisim"><div><p class="eyebrow">METEHAN CANİK / PROFESSIONAL PORTFOLIO</p><h2>Her deneyim,<br><em>bir sonraki adımın parçası.</em></h2><p>Özgeçmiş bilgileri ve kişisel fotoğraf arşivinden hazırlanan profesyonel portföy.</p>
