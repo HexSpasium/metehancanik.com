@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#111214"><meta name="description" content="Metehan Canik — profesyonel biyografi, mesleki deneyim, eğitim ve referans portföyü."><title>Metehan Canik | Profesyonel Portföy</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"><link rel="stylesheet" href="style.css"></head>
+<html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#111214"><meta name="description" content="Metehan Canik — profesyonel biyografi, mesleki deneyim, eğitim ve referans portföyü."><title>Metehan Canik | Profesyonel Portföy</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"></head>
 <body><div class="progress" id="progress"></div><header class="header"><a class="brand" href="#top"><b>MC</b><span>METEHAN CANİK<small>PROFESSIONAL PORTFOLIO</small></span></a><button id="menuToggle" class="menu-toggle" aria-label="Menüyü aç" aria-expanded="false">☰</button><nav id="mainNav"><a href="#profil">Profil</a><a href="#deneyim">Deneyim</a><a href="#egitim">Eğitim</a><a href="#yetkinlikler">Yetkinlikler</a><a href="#referanslar">Referanslar</a><a href="#arsiv">Fotoğraf arşivi</a><a href="#markalar">Markalar</a></nav><a class="nav-cta" href="#iletisim">Portföy ↗</a></header>
 <section class="portfolio-announcement" aria-label="Portföy tasarım ve dijital pazarlama duyurusu">
   <div class="announcement-inner">
@@ -78,12 +78,16 @@
     </div>
     <div class="signal-map-frame">
       <div class="signal-map-meta"><span><i></i> NETWORK VISUALIZATION</span><span>MC / ROUTE MATRIX — 2026</span></div>
-      <div id="signalMap" class="signal-map-real" role="application" aria-label="Gerçek coğrafi harita üzerinde şehir işaretleri ve bağlantı rotaları">
-        <div class="map-loading">COĞRAFİ HARİTA YÜKLENİYOR…</div>
+      <figure class="signal-map-static">
+        <img src="https://svs.gsfc.nasa.gov/vis/a030000/a030800/a030877/BlackMarble_2016_928m_mediterranean_labeled_print.jpg" alt="NASA Black Marble 2016 uydu verileriyle Akdeniz, Avrupa ve Orta Doğu'nun gece ışıkları haritası" loading="lazy" decoding="async">
+        <figcaption>NASA / GODDARD SPACE FLIGHT CENTER · BLACK MARBLE 2016</figcaption>
+      </figure>
+      <div class="signal-city-index" aria-label="Haritada anlatılan şehirler">
+        <span>Mersin <b>MERKEZ</b></span><span>İstanbul</span><span>Ankara</span><span>Adana</span><span>Antalya</span><span>İzmir</span><span>Aydın</span><span>Podgorica</span><span>Tahran</span><span>Kandahar</span>
       </div>
-      <div class="signal-map-footer"><span><b>10</b> COĞRAFİ NOKTA</span><span><b>OPENSTREETMAP</b> GERÇEK HARİTA VERİSİ</span><span>ETKİLEŞİMLİ / ZOOM & PAN</span></div>
+      <div class="signal-map-footer"><span><b>10</b> COĞRAFİ NOKTA</span><span><b>NASA BLACK MARBLE</b> UYDU GÖRÜNTÜSÜ</span><span>SABİT GÖRSEL / 2016 VERİSİ</span></div>
     </div>
-    <p class="signal-map-note">Harita, OpenStreetMap coğrafi verileriyle oluşturulmuştur. İşaretçiler şehir merkezlerini gösterir; bağlantı çizgileri görsel amaçlıdır, gerçek seyahat rotası veya canlı konum takibi değildir.</p>
+    <p class="signal-map-note">Arka plan görseli NASA Goddard Space Flight Center'ın Black Marble 2016 gece ışıkları uydu kompozitidir. Şehir listesi portföyde adı geçen yerleri belirtir; görsel canlı konum veya gerçek zamanlı takip içermez. Kaynak: NASA.</p>
   </div>
 </section>
 <section class="closing" id="iletisim"><div><p class="eyebrow">METEHAN CANİK / PROFESSIONAL PORTFOLIO</p><h2>Her deneyim,<br><em>bir sonraki adımın parçası.</em></h2><p>Özgeçmiş bilgileri ve kişisel fotoğraf arşivinden hazırlanan profesyonel portföy.</p>
@@ -113,4 +117,4 @@
   </div>
 </section>
 <footer><span>© <span id="year"></span> METEHAN CANİK</span><span>PROFESYONEL BİYOGRAFİ & KİŞİSEL ARŞİV</span><a href="#top">YUKARI ↑</a></footer>
-<div class="lightbox" id="lightbox" aria-hidden="true"><button id="lightboxClose" class="close" aria-label="Kapat">×</button><button id="lightboxPrev" class="prev" aria-label="Önceki">‹</button><figure><img id="lightboxImage" src="" alt=""><figcaption id="lightboxCaption"></figcaption></figure><button id="lightboxNext" class="next" aria-label="Sonraki">›</button></div><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script><script src="script.js"></script></body></html>
+<div class="lightbox" id="lightbox" aria-hidden="true"><button id="lightboxClose" class="close" aria-label="Kapat">×</button><button id="lightboxPrev" class="prev" aria-label="Önceki">‹</button><figure><img id="lightboxImage" src="" alt=""><figcaption id="lightboxCaption"></figcaption></figure><button id="lightboxNext" class="next" aria-label="Sonraki">›</button></div><script src="script.js"></script></body></html>
