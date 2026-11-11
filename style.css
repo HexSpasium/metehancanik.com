@@ -250,3 +250,9 @@ section[id]{scroll-margin-top:92px}
 @media(max-width:760px){.social-network{padding:55px 20px 30px}.social-links{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:28px 0 22px}.social-link{min-height:76px;padding:11px;gap:9px}.social-icon{width:36px;height:36px;flex-basis:36px}.social-icon svg{width:19px;height:19px}.social-link b{font-size:11px}.social-link small{font-size:8px}}
 @media(max-width:360px){.social-links{grid-template-columns:1fr}.social-link{min-height:68px}}
 @media(prefers-reduced-motion:reduce){.social-link,.social-link:before{transition:none!important}.social-link:hover{transform:none}}
+
+
+/* Reference cards without portrait images */
+.refs article{display:flex;align-items:stretch;min-height:150px}
+.refs article>div{width:100%;padding:24px}
+@media(max-width:650px){.refs article{display:block;min-height:0}.refs article>div{padding:18px}}
