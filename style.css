@@ -284,3 +284,50 @@ section[id]{scroll-margin-top:92px}
 @media(max-width:900px){.announcement-inner{grid-template-columns:1fr auto;gap:9px 18px}.announcement-kicker{grid-column:1/-1}.announcement-inner p{grid-column:1}.announcement-inner>a{grid-column:2;grid-row:2}}
 @media(max-width:600px){.portfolio-announcement{padding:15px 20px}.announcement-inner{grid-template-columns:1fr;gap:10px}.announcement-kicker,.announcement-inner p,.announcement-inner>a{grid-column:1;grid-row:auto}.announcement-inner p{font-size:10px}.announcement-inner>a{justify-self:start;margin-top:3px}}
 @media(prefers-reduced-motion:reduce){.portfolio-announcement:before,.announcement-kicker i{animation:none!important}}
+
+
+/* === ANNOUNCEMENT: CYBER CREATIVE AD PANEL === */
+.portfolio-announcement{padding:22px 6vw 17px!important;background:radial-gradient(ellipse at 15% 50%,#1b3029 0%,transparent 38%),linear-gradient(112deg,#0b1012 0%,#171a18 52%,#111416 100%)!important;border-bottom:1px solid #d9b45b66!important}
+.portfolio-announcement:after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.18;background-image:linear-gradient(90deg,#ffffff0c 1px,transparent 1px),linear-gradient(#ffffff0c 1px,transparent 1px);background-size:28px 28px;mask-image:linear-gradient(90deg,#000,transparent 90%)}
+.portfolio-announcement .announcement-inner{display:block!important;max-width:1250px!important}
+.announcement-topline,.announcement-bottomline{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:center;gap:14px}
+.announcement-topline{padding-bottom:13px;border-bottom:1px solid #ffffff20}
+.portfolio-announcement .announcement-kicker{font:800 9px Manrope!important;letter-spacing:.2em!important;color:#e4b84f!important}
+.announcement-kicker i{width:7px;height:7px;vertical-align:1px}
+.announcement-status,.announcement-bottomline{font:700 8px Manrope;letter-spacing:.15em;color:#788780}
+.announcement-status b,.announcement-bottomline i{display:inline-block;width:6px;height:6px;margin-right:7px;border-radius:50%;background:#39b879;box-shadow:0 0 10px #39b879}
+.announcement-content{position:relative;z-index:1;display:grid;grid-template-columns:76px minmax(0,1fr) auto;align-items:center;gap:22px;padding:22px 0}
+.announcement-mark{position:relative;width:66px;height:66px;display:grid;place-items:center;border:1px solid #dcb85d88;background:linear-gradient(145deg,#e4b84f12,#39b8790b);box-shadow:inset 0 0 22px #e4b84f0c,0 0 24px #39b87912}
+.announcement-mark:before,.announcement-mark:after{content:"";position:absolute;background:#39b879;box-shadow:0 0 9px #39b879}
+.announcement-mark:before{width:20px;height:1px;top:-1px;left:8px}.announcement-mark:after{width:1px;height:20px;right:-1px;bottom:8px}
+.announcement-mark span{font:800 21px Manrope;letter-spacing:.06em;color:#e4b84f}
+.announcement-mark i{position:absolute;right:-9px;top:-10px;color:#39b879;font-style:normal;font-size:17px;animation:announceRotate 12s linear infinite}
+.announcement-overline{font:800 8px Manrope;letter-spacing:.24em;color:#39b879}
+.portfolio-announcement .announcement-copy h2{margin:5px 0 7px!important;font:800 clamp(23px,3vw,34px)/1.08 Manrope!important;letter-spacing:-.055em!important;color:#f5f4ed!important}
+.announcement-copy h2 em{font:400 1em Georgia;color:#e4b84f}
+.portfolio-announcement .announcement-copy p{max-width:760px!important;margin:0!important;color:#b8c1bb!important;font:400 12px/1.75 "DM Sans",sans-serif!important}
+.portfolio-announcement .announcement-copy p strong{color:#fff;font-weight:700}
+.portfolio-announcement .announcement-content>a{display:flex!important;align-items:center;justify-content:space-between;gap:18px;padding:14px 16px!important;border:1px solid #dcb85d99!important;background:linear-gradient(110deg,#e4b84f12,#39b8790b)!important;color:#f0c96c!important;font:800 9px Manrope!important;letter-spacing:.12em!important;white-space:nowrap;box-shadow:0 0 22px #e4b84f0b;transition:all .25s}
+.portfolio-announcement .announcement-content>a:hover{background:#e4b84f!important;color:#101214!important;box-shadow:0 0 25px #e4b84f55;transform:translateY(-3px)}
+.announcement-content>a b{font-size:18px}
+.announcement-bottomline{padding-top:11px;border-top:1px solid #ffffff1b}
+.announcement-bottomline span:first-child{color:#89978f}
+@keyframes announceRotate{to{transform:rotate(360deg)}}
+@media(max-width:900px){.announcement-content{grid-template-columns:58px minmax(0,1fr);gap:16px}.announcement-mark{width:54px;height:54px}.portfolio-announcement .announcement-content>a{grid-column:2;justify-self:start;margin-top:2px}}
+@media(max-width:600px){
+ .portfolio-announcement{padding:15px 18px 13px!important}
+ .announcement-topline{padding-bottom:10px}
+ .portfolio-announcement .announcement-kicker{font-size:8px!important;letter-spacing:.13em!important}
+ .announcement-status{font-size:6px;letter-spacing:.08em}
+ .announcement-content{grid-template-columns:42px minmax(0,1fr)!important;gap:12px;padding:16px 0 14px}
+ .announcement-mark{width:40px;height:40px}
+ .announcement-mark span{font-size:14px}
+ .announcement-mark i{font-size:12px;right:-7px;top:-8px}
+ .announcement-overline{font-size:7px;letter-spacing:.15em}
+ .portfolio-announcement .announcement-copy h2{font-size:23px!important;margin:4px 0 6px!important}
+ .portfolio-announcement .announcement-copy p{font-size:11px!important;line-height:1.65!important}
+ .portfolio-announcement .announcement-content>a{grid-column:1/-1;justify-self:stretch!important;margin:3px 0 0!important;padding:12px 14px!important;font-size:8px!important}
+ .announcement-bottomline{font-size:6px;letter-spacing:.07em}
+ .announcement-bottomline span:last-child{display:none}
+}
+@media(prefers-reduced-motion:reduce){.announcement-mark i{animation:none!important}}
