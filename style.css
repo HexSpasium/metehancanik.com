@@ -347,3 +347,18 @@ section[id]{scroll-margin-top:92px}
 @keyframes remoteBeacon{0%,100%{opacity:.7;filter:drop-shadow(0 0 3px #39b87966)}50%{opacity:1;filter:drop-shadow(0 0 9px #39b879cc)}}
 @keyframes packetFlash{0%,12%{opacity:0}25%,65%{opacity:1}85%,100%{opacity:0}}
 @media(prefers-reduced-motion:reduce){.signal-routes path,.signal-packets circle,.hub-aura,.hub-orbit,.hub-pulse,.map-point circle,.map-scan path{animation:none!important}}
+
+
+/* === CINEMATIC EXPERIENCE SECTION BACKDROP === */
+.experience-cinematic{position:relative;isolation:isolate;overflow:hidden;background:#101214}
+.experience-backdrop{position:absolute;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+.experience-backdrop:before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(8,11,13,.94) 0%,rgba(8,11,13,.82) 45%,rgba(8,11,13,.76) 100%),linear-gradient(0deg,rgba(8,11,13,.96) 0%,rgba(8,11,13,.48) 45%,rgba(8,11,13,.72) 100%)}
+.experience-backdrop:after{content:"";position:absolute;inset:18px;z-index:2;border:1px solid rgba(213,177,103,.23);box-shadow:inset 0 0 45px rgba(0,0,0,.32);pointer-events:none}
+.experience-backdrop img{display:block;width:100%;height:100%;min-height:100%;object-fit:cover;object-position:center 42%;filter:saturate(.78) contrast(1.08) brightness(.72);transform:scale(1.025)}
+.experience-cinematic>.section{position:relative;z-index:1}
+.experience-cinematic .section-label,.experience-cinematic .heading,.experience-cinematic .timeline{position:relative}
+.experience-cinematic .timeline article{background:rgba(12,15,16,.58);backdrop-filter:blur(5px);border-color:rgba(221,190,125,.2);padding:18px 20px}
+.experience-cinematic .timeline article>div{min-width:0}
+.experience-cinematic .timeline article:hover{background:rgba(18,24,23,.82);border-color:rgba(221,190,125,.55)}
+@media(max-width:700px){.experience-backdrop:after{inset:9px}.experience-backdrop img{object-position:52% center}.experience-cinematic .timeline article{padding:15px 13px;backdrop-filter:blur(3px)}}
+@media(prefers-reduced-motion:reduce){.experience-backdrop img{transform:none}}
