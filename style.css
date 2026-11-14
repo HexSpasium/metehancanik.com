@@ -544,8 +544,3 @@ footer{background:#03060b;color:#8eb4d9}
 @media(prefers-reduced-motion:reduce){.mc-loader-grid,.mc-loader-orbit,.mc-loader-core:before,.mc-core-ring{animation:none!important}.mc-preloader{transition:none}}
 
 
-/* Turkish spoken welcome control */
-.mc-voice-start{margin-top:18px;padding:11px 18px;border:1px solid rgba(90,190,255,.55);border-radius:3px;background:rgba(8,35,65,.48);color:#d9f2ff;font:700 10px/1.2 Manrope,sans-serif;letter-spacing:.14em;cursor:pointer;box-shadow:0 0 24px rgba(35,145,255,.12);transition:background .25s,border-color .25s,box-shadow .25s}
-.mc-voice-start:hover{background:rgba(20,85,140,.55);border-color:#78d5ff;box-shadow:0 0 28px rgba(35,145,255,.28)}
-.mc-voice-start:focus-visible{outline:2px solid #9be4ff;outline-offset:4px}
-.mc-voice-start.is-speaking{border-color:#72e5c0;color:#bfffe9}
