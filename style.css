@@ -534,8 +534,7 @@ footer{background:#03060b;color:#8eb4d9}
 .mc-loader-track{height:2px;background:#173b61;overflow:hidden;box-shadow:0 0 12px #168cff18}
 .mc-loader-track i{display:block;width:0;height:100%;background:linear-gradient(90deg,#167bdb,#59caff,#d6f5ff);box-shadow:0 0 12px #54bdff;transition:width .15s linear}
 .mc-loader-status{text-align:center;margin-top:12px;color:#7398bd;font:500 10px Manrope,sans-serif;letter-spacing:.06em}
-.mc-loader-skip{position:absolute;z-index:3;bottom:9%;padding:11px 16px;border:1px solid #2879b5;background:#06172acc;color:#a9dcff;font:800 8px Manrope,sans-serif;letter-spacing:.2em;cursor:pointer;transition:.25s}
-.mc-loader-skip:hover{background:#0b3155;border-color:#7bd2ff;box-shadow:0 0 22px #168cff38}
+
 .mc-loader-skip span{margin-left:12px;color:#5abfff}
 .mc-loader-corners{position:absolute;left:28px;right:28px;bottom:24px;display:flex;justify-content:space-between;color:#416b91;font:700 7px Manrope,sans-serif;letter-spacing:.2em}
 @keyframes mcLoaderRotate{to{transform:rotate(360deg)}}
