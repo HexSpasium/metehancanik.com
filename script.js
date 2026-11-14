@@ -153,29 +153,30 @@
  const bar=document.getElementById('mcLoaderBar');
  const status=document.getElementById('mcLoaderStatus');
  const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
- const voiceButton=document.getElementById('mcVoiceStart');
- const welcomeText='Metehan Canik. MC Design and Digital’e hoş geldiniz. Yaratıcılığın, teknolojinin ve dijital deneyimin buluştuğu dünyaya hoş geldiniz.';
- let welcomeSpoken=false;
+ const welcomeText='Metehan Canik. MC Design and Digital dünyasına hoş geldiniz. Burada yaratıcılık teknolojiyle, fikirler dijital deneyimle buluşuyor. Tasarım, üretim ve yenilikçi çözümlerle geleceği birlikte şekillendiriyoruz. MC Design and Digital. İyi keşifler dileriz.';
+ let welcomeSpoken=false,voiceStopTimer=0;
  const speakWelcome=()=>{
    if(welcomeSpoken||!('speechSynthesis' in window))return;
    welcomeSpoken=true;
    const utterance=new SpeechSynthesisUtterance(welcomeText);
-   utterance.lang='tr-TR';utterance.rate=.88;utterance.pitch=.82;utterance.volume=1;
+   utterance.lang='tr-TR';utterance.rate=.82;utterance.pitch=.78;utterance.volume=1;
    const voices=window.speechSynthesis.getVoices();
    const turkish=voices.filter(v=>v.lang&&v.lang.toLowerCase().startsWith('tr'));
    const preferred=turkish.find(v=>/male|erkek|tolga|ahmet|mehmet|cem|kaan/i.test(v.name))||turkish[0];
    if(preferred)utterance.voice=preferred;
-   utterance.onstart=()=>voiceButton?.classList.add('is-speaking');
-   utterance.onend=()=>voiceButton?.classList.remove('is-speaking');
-   utterance.onerror=()=>voiceButton?.classList.remove('is-speaking');
-   window.speechSynthesis.cancel();window.speechSynthesis.speak(utterance);
-   if(voiceButton){voiceButton.textContent='✓ KARŞILAMA SESİ BAŞLATILDI';voiceButton.classList.add('is-speaking');}
+   window.speechSynthesis.cancel();
+   window.speechSynthesis.speak(utterance);
+   voiceStopTimer=window.setTimeout(()=>window.speechSynthesis.cancel(),15000);
  };
- voiceButton?.addEventListener('click',speakWelcome,{once:true});
+ if('speechSynthesis' in window){
+   const begin=()=>{if(!welcomeSpoken)speakWelcome()};
+   window.setTimeout(begin,250);
+   window.speechSynthesis.onvoiceschanged=()=>{if(!welcomeSpoken)begin()};
+ }
  const duration=reduced?1800:15000;
  const messages=['Dijital arayüz hazırlanıyor...','Görsel katmanlar senkronize ediliyor...','Atmosferik sistem başlatılıyor...','Son dokunuşlar uygulanıyor...'];
  let start=0,raf=0,swapper=0,closed=false;
- const close=()=>{if(closed)return;closed=true;cancelAnimationFrame(raf);clearInterval(swapper);overlay.classList.add('is-leaving');document.body.classList.remove('mc-intro-active');setTimeout(()=>overlay.remove(),1200)};
+ const close=()=>{if(closed)return;closed=true;cancelAnimationFrame(raf);clearInterval(swapper);clearTimeout(voiceStopTimer);if('speechSynthesis' in window)window.speechSynthesis.cancel();overlay.classList.add('is-leaving');document.body.classList.remove('mc-intro-active');setTimeout(()=>overlay.remove(),1200)};
  const tick=(now)=>{if(!start)start=now;const p=Math.min(1,(now-start)/duration),v=Math.floor(p*100);percent.textContent=String(v).padStart(2,'0')+'%';bar.style.width=(p*100)+'%';status.textContent=messages[Math.min(messages.length-1,Math.floor(p*messages.length))];if(p>=1){percent.textContent='100%';status.textContent='Hoş geldiniz. Sistem hazır.';setTimeout(close,700)}else raf=requestAnimationFrame(tick)};
  let active=0;swapper=setInterval(()=>{labels[active].classList.remove('active');active=(active+1)%labels.length;labels[active].classList.add('active')},3000);
  document.body.classList.add('mc-intro-active');
