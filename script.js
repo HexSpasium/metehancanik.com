@@ -153,6 +153,25 @@
  const bar=document.getElementById('mcLoaderBar');
  const status=document.getElementById('mcLoaderStatus');
  const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+ const voiceButton=document.getElementById('mcVoiceStart');
+ const welcomeText='Metehan Canik. MC Design and Digital’e hoş geldiniz. Yaratıcılığın, teknolojinin ve dijital deneyimin buluştuğu dünyaya hoş geldiniz.';
+ let welcomeSpoken=false;
+ const speakWelcome=()=>{
+   if(welcomeSpoken||!('speechSynthesis' in window))return;
+   welcomeSpoken=true;
+   const utterance=new SpeechSynthesisUtterance(welcomeText);
+   utterance.lang='tr-TR';utterance.rate=.88;utterance.pitch=.82;utterance.volume=1;
+   const voices=window.speechSynthesis.getVoices();
+   const turkish=voices.filter(v=>v.lang&&v.lang.toLowerCase().startsWith('tr'));
+   const preferred=turkish.find(v=>/male|erkek|tolga|ahmet|mehmet|cem|kaan/i.test(v.name))||turkish[0];
+   if(preferred)utterance.voice=preferred;
+   utterance.onstart=()=>voiceButton?.classList.add('is-speaking');
+   utterance.onend=()=>voiceButton?.classList.remove('is-speaking');
+   utterance.onerror=()=>voiceButton?.classList.remove('is-speaking');
+   window.speechSynthesis.cancel();window.speechSynthesis.speak(utterance);
+   if(voiceButton){voiceButton.textContent='✓ KARŞILAMA SESİ BAŞLATILDI';voiceButton.classList.add('is-speaking');}
+ };
+ voiceButton?.addEventListener('click',speakWelcome,{once:true});
  const duration=reduced?1800:15000;
  const messages=['Dijital arayüz hazırlanıyor...','Görsel katmanlar senkronize ediliyor...','Atmosferik sistem başlatılıyor...','Son dokunuşlar uygulanıyor...'];
  let start=0,raf=0,swapper=0,closed=false;
