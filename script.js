@@ -143,3 +143,24 @@
  const ro=new ResizeObserver(resize);ro.observe(canvas);resize();draw();
  document.addEventListener('visibilitychange',()=>{if(document.hidden)cancelAnimationFrame(raf);else if(!reduced){cancelAnimationFrame(raf);raf=requestAnimationFrame(draw)}});
 })();
+
+/* Cinematic 30-second brand intro with accessible skip control. */
+(()=> {
+ const overlay=document.getElementById('mcPreloader'); if(!overlay)return;
+ const name=overlay.querySelector('.mc-loader-name');
+ const labels=[...name.querySelectorAll('span')];
+ const percent=document.getElementById('mcLoaderPercent');
+ const bar=document.getElementById('mcLoaderBar');
+ const status=document.getElementById('mcLoaderStatus');
+ const skip=document.getElementById('mcLoaderSkip');
+ const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+ const duration=reduced?1800:30000;
+ const messages=['Dijital arayüz hazırlanıyor...','Görsel katmanlar senkronize ediliyor...','Atmosferik sistem başlatılıyor...','Son dokunuşlar uygulanıyor...'];
+ let start=0,raf=0,swapper=0,closed=false;
+ const close=()=>{if(closed)return;closed=true;cancelAnimationFrame(raf);clearInterval(swapper);overlay.classList.add('is-leaving');document.body.classList.remove('mc-intro-active');setTimeout(()=>overlay.remove(),1200)};
+ const tick=(now)=>{if(!start)start=now;const p=Math.min(1,(now-start)/duration),v=Math.floor(p*100);percent.textContent=String(v).padStart(2,'0')+'%';bar.style.width=(p*100)+'%';status.textContent=messages[Math.min(messages.length-1,Math.floor(p*messages.length))];if(p>=1){percent.textContent='100%';status.textContent='Hoş geldiniz. Sistem hazır.';setTimeout(close,700)}else raf=requestAnimationFrame(tick)};
+ let active=0;swapper=setInterval(()=>{labels[active].classList.remove('active');active=(active+1)%labels.length;labels[active].classList.add('active')},3000);
+ skip.addEventListener('click',close);
+ document.body.classList.add('mc-intro-active');
+ raf=requestAnimationFrame(tick);
+})();
