@@ -33,7 +33,7 @@
     <div class="mc-services" id="hizmetler">
       <button class="mc-service-card" id="webDesignOpen" type="button" aria-haspopup="dialog" aria-controls="webDesignModal"><b>01</b><span>Web Sitesi<br>Tasarımı</span><i>↗</i></button>
       <article><b>02</b><span>3D Printer<br>Baskıları</span><i>↗</i></article>
-      <article><b>03</b><span>QR ve NFC<br>Menü Tasarımı</span><i>↗</i></article>
+      <button class="mc-service-card" id="qrNfcOpen" type="button" aria-haspopup="dialog" aria-controls="qrNfcModal"><b>03</b><span>QR ve NFC<br>Menü Tasarımı</span><i>↗</i></button>
       <article><b>04</b><span tabela> Tabela ve Pano<br>Tasarımı</span><i>↗</i></article>
     </div>
     <div class="mc-project-modal" id="webDesignModal" aria-hidden="true">
@@ -64,6 +64,20 @@
           <div class="mc-project-empty" id="mcProjectEstate" role="tabpanel" data-project-panel="estate" hidden><b>03 / EMLAK</b><span>Projeler yakında burada.</span></div>
           <div class="mc-project-empty" id="mcProjectBuild" role="tabpanel" data-project-panel="build" hidden><b>04 / İNŞAAT</b><span>Projeler yakında burada.</span></div>
         </div>
+      </section>
+    </div>
+
+    <div class="mc-project-modal mc-video-modal" id="qrNfcModal" aria-hidden="true">
+      <div class="mc-project-backdrop" data-qr-close></div>
+      <section class="mc-project-panel mc-video-panel" role="dialog" aria-modal="true" aria-labelledby="qrNfcTitle">
+        <button class="mc-project-close" type="button" aria-label="Videoyu kapat" data-qr-close>×</button>
+        <p class="mc-project-kicker">MC / DIGITAL MENU EXPERIENCE</p>
+        <h2 id="qrNfcTitle">QR &amp; NFC <em>Menü Tasarımı</em></h2>
+        <p class="mc-project-intro">QR kod ve NFC teknolojisiyle temassız, modern dijital menü deneyimi.</p>
+        <video id="qrNfcVideo" class="mc-qr-video" controls playsinline preload="metadata">
+          <source src="assets/QR%20ve%20NFC%20Men%C3%BC%20Tasar%C4%B1m%C4%B1.mp4" type="video/mp4">
+          Tarayıcınız video oynatmayı desteklemiyor.
+        </video>
       </section>
     </div>
     <div class="mc-team" id="ekip">
