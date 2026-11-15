@@ -596,3 +596,8 @@ footer{background:#03060b;color:#8eb4d9}
 .mc-video-panel{width:min(980px,100%)}
 .mc-qr-video{display:block;width:100%;max-height:64vh;aspect-ratio:16/9;object-fit:contain;background:#02060c;border:1px solid #1a68b2;box-shadow:0 18px 48px #0008}
 @media(max-width:640px){.mc-qr-video{max-height:55vh;aspect-ratio:9/16}}
+
+/* Ensure the QR/NFC dialog always layers above the complete site layout. */
+#qrNfcModal{z-index:99999;pointer-events:none}
+#qrNfcModal.is-open{pointer-events:auto}
+#qrNfcModal .mc-project-panel{z-index:2}
