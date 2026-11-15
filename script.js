@@ -182,3 +182,25 @@
  document.body.classList.add('mc-intro-active');
  raf=requestAnimationFrame(tick);
 })();
+
+/* Web design portfolio modal and sector tabs */
+(()=> {
+ const modal=document.getElementById('webDesignModal');
+ const opener=document.getElementById('webDesignOpen');
+ if(!modal||!opener)return;
+ const closeButtons=modal.querySelectorAll('[data-project-close]');
+ const tabs=[...modal.querySelectorAll('[data-project-tab]')];
+ const panels=[...modal.querySelectorAll('[data-project-panel]')];
+ let previousFocus=null;
+ const open=()=>{previousFocus=document.activeElement;modal.classList.add('is-open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';modal.querySelector('.mc-project-close')?.focus()};
+ const close=()=>{modal.classList.remove('is-open');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';previousFocus?.focus()};
+ opener.addEventListener('click',open);
+ closeButtons.forEach(button=>button.addEventListener('click',close));
+ tabs.forEach(tab=>tab.addEventListener('click',()=>{
+   const key=tab.dataset.projectTab;
+   tabs.forEach(item=>{const active=item===tab;item.classList.toggle('active',active);item.setAttribute('aria-selected',String(active))});
+   panels.forEach(panel=>{panel.hidden=panel.dataset.projectPanel!==key});
+ }));
+ modal.addEventListener('click',event=>{if(event.target===modal.querySelector('.mc-project-backdrop'))close()});
+ document.addEventListener('keydown',event=>{if(event.key==='Escape'&&modal.classList.contains('is-open'))close()});
+})();
