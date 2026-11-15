@@ -31,10 +31,39 @@
     </aside></div>
     <div class="mc-home-meta"><span>CREATIVE SYSTEMS</span><span>3D PRODUCTION</span><span>DIGITAL EXPERIENCE</span></div>
     <div class="mc-services" id="hizmetler">
-      <article><b>01</b><span>Web Sitesi<br>Tasarımı</span><i>↗</i></article>
+      <button class="mc-service-card" id="webDesignOpen" type="button" aria-haspopup="dialog" aria-controls="webDesignModal"><b>01</b><span>Web Sitesi<br>Tasarımı</span><i>↗</i></button>
       <article><b>02</b><span>3D Printer<br>Baskıları</span><i>↗</i></article>
       <article><b>03</b><span>QR ve NFC<br>Menü Tasarımı</span><i>↗</i></article>
       <article><b>04</b><span tabela> Tabela ve Pano<br>Tasarımı</span><i>↗</i></article>
+    </div>
+    <div class="mc-project-modal" id="webDesignModal" aria-hidden="true">
+      <div class="mc-project-backdrop" data-project-close></div>
+      <section class="mc-project-panel" role="dialog" aria-modal="true" aria-labelledby="mcProjectTitle">
+        <button class="mc-project-close" type="button" aria-label="Menüyü kapat" data-project-close>×</button>
+        <p class="mc-project-kicker">MC / WEB DESIGN PORTFOLIO</p>
+        <h2 id="mcProjectTitle">Web Sitesi <em>Projeleri</em></h2>
+        <p class="mc-project-intro">Sektörünü seç, tasarladığımız dijital projeleri keşfet.</p>
+        <div class="mc-project-tabs" role="tablist" aria-label="Proje kategorileri">
+          <button type="button" class="active" role="tab" aria-selected="true" aria-controls="mcProjectCafe" data-project-tab="cafe">Cafe &amp; Restorant</button>
+          <button type="button" role="tab" aria-selected="false" aria-controls="mcProjectAuto" data-project-tab="auto">Otomotiv</button>
+          <button type="button" role="tab" aria-selected="false" aria-controls="mcProjectEstate" data-project-tab="estate">Emlak</button>
+          <button type="button" role="tab" aria-selected="false" aria-controls="mcProjectBuild" data-project-tab="build">İnşaat</button>
+        </div>
+        <div class="mc-project-content">
+          <article class="mc-project-entry" id="mcProjectCafe" role="tabpanel" data-project-panel="cafe">
+            <div class="mc-project-entry-visual"><span>MC / CASE 001</span><strong>GABBY<br>GRILLS</strong><small>CAFE · BURGER · GRILL</small></div>
+            <div class="mc-project-entry-copy">
+              <small class="mc-project-category">CAFE &amp; RESTORANT / 001</small>
+              <h3>GabbyGrills</h3>
+              <p>Mersin'de el yapımı ekmekleri, burger çeşitleri ve zengin menüleriyle bilinen popüler bir hamburger ve ızgara mekanıdır.</p>
+              <a href="https://hexspasium.github.io/GabbyGrills" target="_blank" rel="noopener noreferrer">TASARLANAN MENÜYÜ GÖRÜNTÜLE <span>↗</span></a>
+            </div>
+          </article>
+          <div class="mc-project-empty" id="mcProjectAuto" role="tabpanel" data-project-panel="auto" hidden><b>02 / OTOMOTİV</b><span>Projeler yakında burada.</span></div>
+          <div class="mc-project-empty" id="mcProjectEstate" role="tabpanel" data-project-panel="estate" hidden><b>03 / EMLAK</b><span>Projeler yakında burada.</span></div>
+          <div class="mc-project-empty" id="mcProjectBuild" role="tabpanel" data-project-panel="build" hidden><b>04 / İNŞAAT</b><span>Projeler yakında burada.</span></div>
+        </div>
+      </section>
     </div>
     <div class="mc-team" id="ekip">
       <div><small>YÖNETİM & OPERASYON</small><b>Yönetici <span>Metehan Canik</span></b></div>
