@@ -73,11 +73,23 @@
         <button class="mc-project-close" type="button" aria-label="Videoyu kapat" data-qr-close>×</button>
         <p class="mc-project-kicker">MC / DIGITAL MENU EXPERIENCE</p>
         <h2 id="qrNfcTitle">QR &amp; NFC <em>Menü Tasarımı</em></h2>
-        <p class="mc-project-intro">QR kod ve NFC teknolojisiyle temassız, modern dijital menü deneyimi.</p>
-        <video id="qrNfcVideo" class="mc-qr-video" controls playsinline preload="metadata">
-          <source src="assets/QR%20ve%20NFC%20Men%C3%BC%20Tasar%C4%B1m%C4%B1.mp4" type="video/mp4">
-          Tarayıcınız video oynatmayı desteklemiyor.
-        </video>
+        <p class="mc-project-intro">İhtiyacına uygun menü teknolojisini seç, tasarımlarımızı keşfet.</p>
+        <div class="mc-qr-tabs" role="tablist" aria-label="QR ve NFC tasarım kategorileri">
+          <button type="button" role="tab" aria-selected="false" data-qr-tab="qr">QR Tasarımları</button>
+          <button type="button" role="tab" aria-selected="false" data-qr-tab="nfc">NFC Tasarımları</button>
+          <button type="button" role="tab" aria-selected="false" data-qr-tab="both">QR ve NFC Ortak Tasarımları</button>
+        </div>
+        <div class="mc-qr-category-content">
+          <div class="mc-qr-placeholder" data-qr-panel="qr" hidden><b>QR TASARIMLARI</b><span>QR menü projeleri yakında burada.</span></div>
+          <div class="mc-qr-placeholder" data-qr-panel="nfc" hidden><b>NFC TASARIMLARI</b><span>NFC menü projeleri yakında burada.</span></div>
+          <div class="mc-qr-shared" data-qr-panel="both" hidden>
+            <div class="mc-qr-shared-heading"><b>QR + NFC / ORTAK PROJE</b><span>Temassız dijital menü deneyimi</span></div>
+            <video id="qrNfcVideo" class="mc-qr-video" controls playsinline preload="metadata">
+              <source src="assets/QR%20ve%20NFC%20Men%C3%BC%20Tasar%C4%B1m%C4%B1.mp4" type="video/mp4">
+              Tarayıcınız video oynatmayı desteklemiyor.
+            </video>
+          </div>
+        </div>
       </section>
     </div>
     <div class="mc-team" id="ekip">
