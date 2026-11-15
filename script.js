@@ -224,11 +224,7 @@
    modal.style.opacity='1';
    modal.style.pointerEvents='auto';
    document.body.style.overflow='hidden';
-   if(video){
-     video.load();
-     const playPromise=video.play();
-     if(playPromise&&typeof playPromise.catch==='function')playPromise.catch(()=>{});
-   }
+   if(video){video.pause();video.currentTime=0;}
    modal.querySelector('.mc-project-close')?.focus();
  };
  const close=()=>{
@@ -248,6 +244,18 @@
    if(event.target.closest('#qrNfcOpen')){event.preventDefault();open();return;}
    const modal=getModal();
    if(!modal||!modal.classList.contains('is-open'))return;
+   const tab=event.target.closest('[data-qr-tab]');
+   if(tab){
+     const selected=tab.dataset.qrTab;
+     modal.querySelectorAll('[data-qr-tab]').forEach(item=>{const active=item===tab;item.classList.toggle('active',active);item.setAttribute('aria-selected',String(active));});
+     modal.querySelectorAll('[data-qr-panel]').forEach(panel=>{panel.hidden=panel.dataset.qrPanel!==selected;});
+     const video=getVideo();
+     if(video){
+       if(selected==='both'){video.load();const playPromise=video.play();if(playPromise&&typeof playPromise.catch==='function')playPromise.catch(()=>{});}
+       else{video.pause();video.currentTime=0;}
+     }
+     return;
+   }
    if(event.target.closest('[data-qr-close]')||event.target===modal.querySelector('.mc-project-backdrop'))close();
  });
  document.addEventListener('keydown',event=>{
