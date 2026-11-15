@@ -206,3 +206,29 @@
  modal.addEventListener('click',event=>{if(event.target===modal.querySelector('.mc-project-backdrop'))close()});
  document.addEventListener('keydown',event=>{if(event.key==='Escape'&&modal.classList.contains('is-open'))close()});
 })();
+
+
+/* QR & NFC menu showcase: load and play only after the service card is clicked. */
+(()=>{
+ const modal=document.getElementById('qrNfcModal');
+ const opener=document.getElementById('qrNfcOpen');
+ const video=document.getElementById('qrNfcVideo');
+ if(!modal||!opener||!video)return;
+ let previousFocus=null;
+ const open=()=>{
+   previousFocus=document.activeElement;
+   modal.classList.add('is-open');modal.setAttribute('aria-hidden','false');
+   document.body.style.overflow='hidden';
+   video.play().catch(()=>{});
+   modal.querySelector('.mc-project-close')?.focus();
+ };
+ const close=()=>{
+   modal.classList.remove('is-open');modal.setAttribute('aria-hidden','true');
+   video.pause();video.currentTime=0;
+   document.body.style.overflow='';previousFocus?.focus();
+ };
+ opener.addEventListener('click',open);
+ modal.querySelectorAll('[data-qr-close]').forEach(button=>button.addEventListener('click',close));
+ modal.addEventListener('click',event=>{if(event.target===modal.querySelector('.mc-project-backdrop'))close()});
+ document.addEventListener('keydown',event=>{if(event.key==='Escape'&&modal.classList.contains('is-open'))close()});
+})();
