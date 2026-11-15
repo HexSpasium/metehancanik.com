@@ -591,3 +591,8 @@ footer{background:#03060b;color:#8eb4d9}
 @media(max-width:640px){.mc-project-modal{padding:10px}.mc-project-panel{padding:25px 18px}.mc-project-entry{grid-template-columns:1fr;gap:18px}.mc-project-entry-visual{min-height:175px}.mc-project-tabs button{flex:1 1 calc(50% - 8px)}}
 
 @media(max-width:640px){.mc-project-entry{grid-template-columns:1fr}.mc-project-entry-visual{height:230px}.mc-project-select-prompt{padding:22px 14px}}
+
+/* QR & NFC menu showcase video */
+.mc-video-panel{width:min(980px,100%)}
+.mc-qr-video{display:block;width:100%;max-height:64vh;aspect-ratio:16/9;object-fit:contain;background:#02060c;border:1px solid #1a68b2;box-shadow:0 18px 48px #0008}
+@media(max-width:640px){.mc-qr-video{max-height:55vh;aspect-ratio:9/16}}
