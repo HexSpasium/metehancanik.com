@@ -208,27 +208,50 @@
 })();
 
 
-/* QR & NFC menu showcase: load and play only after the service card is clicked. */
+/* QR & NFC menu showcase — delegated click handling for reliable opening. */
 (()=>{
- const modal=document.getElementById('qrNfcModal');
- const opener=document.getElementById('qrNfcOpen');
- const video=document.getElementById('qrNfcVideo');
- if(!modal||!opener||!video)return;
+ const getModal=()=>document.getElementById('qrNfcModal');
+ const getVideo=()=>document.getElementById('qrNfcVideo');
  let previousFocus=null;
  const open=()=>{
+   const modal=getModal(),video=getVideo();
+   if(!modal)return;
    previousFocus=document.activeElement;
-   modal.classList.add('is-open');modal.setAttribute('aria-hidden','false');
+   modal.classList.add('is-open');
+   modal.setAttribute('aria-hidden','false');
+   modal.style.display='grid';
+   modal.style.visibility='visible';
+   modal.style.opacity='1';
+   modal.style.pointerEvents='auto';
    document.body.style.overflow='hidden';
-   video.play().catch(()=>{});
+   if(video){
+     video.load();
+     const playPromise=video.play();
+     if(playPromise&&typeof playPromise.catch==='function')playPromise.catch(()=>{});
+   }
    modal.querySelector('.mc-project-close')?.focus();
  };
  const close=()=>{
-   modal.classList.remove('is-open');modal.setAttribute('aria-hidden','true');
-   video.pause();video.currentTime=0;
-   document.body.style.overflow='';previousFocus?.focus();
+   const modal=getModal(),video=getVideo();
+   if(!modal)return;
+   modal.classList.remove('is-open');
+   modal.setAttribute('aria-hidden','true');
+   modal.style.visibility='';
+   modal.style.opacity='';
+   modal.style.display='';
+   modal.style.pointerEvents='';
+   if(video){video.pause();video.currentTime=0;}
+   document.body.style.overflow='';
+   previousFocus?.focus();
  };
- opener.addEventListener('click',open);
- modal.querySelectorAll('[data-qr-close]').forEach(button=>button.addEventListener('click',close));
- modal.addEventListener('click',event=>{if(event.target===modal.querySelector('.mc-project-backdrop'))close()});
- document.addEventListener('keydown',event=>{if(event.key==='Escape'&&modal.classList.contains('is-open'))close()});
+ document.addEventListener('click',event=>{
+   if(event.target.closest('#qrNfcOpen')){event.preventDefault();open();return;}
+   const modal=getModal();
+   if(!modal||!modal.classList.contains('is-open'))return;
+   if(event.target.closest('[data-qr-close]')||event.target===modal.querySelector('.mc-project-backdrop'))close();
+ });
+ document.addEventListener('keydown',event=>{
+   const modal=getModal();
+   if(event.key==='Escape'&&modal?.classList.contains('is-open'))close();
+ });
 })();
