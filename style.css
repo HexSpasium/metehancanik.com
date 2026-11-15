@@ -601,3 +601,17 @@ footer{background:#03060b;color:#8eb4d9}
 #qrNfcModal{z-index:99999;pointer-events:none}
 #qrNfcModal.is-open{pointer-events:auto}
 #qrNfcModal .mc-project-panel{z-index:2}
+
+
+/* QR/NFC category selector */
+.mc-qr-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:22px 0 16px}
+.mc-qr-tabs button{min-height:58px;padding:12px;border:1px solid #1a68b2;background:linear-gradient(145deg,#0c1b30dd,#07101fe8);color:#dceeff;font:800 10px/1.45 Manrope,sans-serif;letter-spacing:.04em;cursor:pointer;transition:.22s}
+.mc-qr-tabs button:hover,.mc-qr-tabs button.active{border-color:#70caff;background:linear-gradient(145deg,#12395d,#0a1a2d);box-shadow:0 0 22px #168cff25;color:#fff}
+.mc-qr-tabs button:focus-visible{outline:2px solid #8cdaff;outline-offset:3px}
+.mc-qr-placeholder{min-height:145px;display:flex;flex-direction:column;justify-content:center;gap:10px;padding:22px;border:1px dashed #31516f;background:#081526}
+.mc-qr-placeholder[hidden],[data-qr-panel][hidden]{display:none!important}
+.mc-qr-placeholder b,.mc-qr-shared-heading b{color:#58baff;font:800 10px Manrope;letter-spacing:.15em}
+.mc-qr-placeholder span,.mc-qr-shared-heading span{color:#a9bfd4;font-size:12px}
+.mc-qr-shared{display:grid;gap:12px}
+.mc-qr-shared-heading{display:flex;flex-direction:column;gap:6px;padding:14px 16px;border-left:2px solid #238fff;background:#0a192b}
+@media(max-width:640px){.mc-qr-tabs{grid-template-columns:1fr}.mc-qr-tabs button{min-height:48px}}
