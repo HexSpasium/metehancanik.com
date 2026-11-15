@@ -192,7 +192,8 @@
  const tabs=[...modal.querySelectorAll('[data-project-tab]')];
  const panels=[...modal.querySelectorAll('[data-project-panel]')];
  let previousFocus=null;
- const open=()=>{previousFocus=document.activeElement;modal.classList.add('is-open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';modal.querySelector('.mc-project-close')?.focus()};
+ const prompt=modal.querySelector('[data-project-prompt]');
+ const open=()=>{previousFocus=document.activeElement;tabs.forEach(tab=>{tab.classList.remove('active');tab.setAttribute('aria-selected','false')});panels.forEach(panel=>{panel.hidden=true});if(prompt)prompt.hidden=false;modal.classList.add('is-open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';modal.querySelector('.mc-project-close')?.focus()};
  const close=()=>{modal.classList.remove('is-open');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';previousFocus?.focus()};
  opener.addEventListener('click',open);
  closeButtons.forEach(button=>button.addEventListener('click',close));
@@ -200,6 +201,7 @@
    const key=tab.dataset.projectTab;
    tabs.forEach(item=>{const active=item===tab;item.classList.toggle('active',active);item.setAttribute('aria-selected',String(active))});
    panels.forEach(panel=>{panel.hidden=panel.dataset.projectPanel!==key});
+   if(prompt)prompt.hidden=true;
  }));
  modal.addEventListener('click',event=>{if(event.target===modal.querySelector('.mc-project-backdrop'))close()});
  document.addEventListener('keydown',event=>{if(event.key==='Escape'&&modal.classList.contains('is-open'))close()});
