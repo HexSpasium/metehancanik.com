@@ -44,13 +44,14 @@
         <h2 id="mcProjectTitle">Web Sitesi <em>Projeleri</em></h2>
         <p class="mc-project-intro">Sektörünü seç, tasarladığımız dijital projeleri keşfet.</p>
         <div class="mc-project-tabs" role="tablist" aria-label="Proje kategorileri">
-          <button type="button" class="active" role="tab" aria-selected="true" aria-controls="mcProjectCafe" data-project-tab="cafe">Cafe &amp; Restorant</button>
+          <button type="button" role="tab" aria-selected="false" aria-controls="mcProjectCafe" data-project-tab="cafe">Cafe &amp; Restorant</button>
           <button type="button" role="tab" aria-selected="false" aria-controls="mcProjectAuto" data-project-tab="auto">Otomotiv</button>
           <button type="button" role="tab" aria-selected="false" aria-controls="mcProjectEstate" data-project-tab="estate">Emlak</button>
           <button type="button" role="tab" aria-selected="false" aria-controls="mcProjectBuild" data-project-tab="build">İnşaat</button>
         </div>
         <div class="mc-project-content">
-          <article class="mc-project-entry" id="mcProjectCafe" role="tabpanel" data-project-panel="cafe">
+          <div class="mc-project-select-prompt" data-project-prompt>Sektör seçerek ilgili proje ve görselleri görüntüleyebilirsin.</div>
+          <article class="mc-project-entry" id="mcProjectCafe" role="tabpanel" data-project-panel="cafe" hidden>
             <div class="mc-project-entry-visual"><img src="assets/GabbyGrills%20Web%20Aray%C3%BCz%C3%BC.png" alt="GabbyGrills için tasarlanan web arayüzü önizlemesi" loading="lazy"><span>MC / CASE 001</span><small>CAFE · BURGER · GRILL</small></div>
             <div class="mc-project-entry-copy">
               <small class="mc-project-category">CAFE &amp; RESTORANT / 001</small>
