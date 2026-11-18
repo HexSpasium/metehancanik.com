@@ -5,7 +5,9 @@
     <application
         android:allowBackup="false"
         android:label="MC Design &amp; Digital"
-        android:theme="@android:style/Theme.Material.Light.NoActionBar"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:theme="@style/AppTheme"
         android:usesCleartextTraffic="false"
         android:supportsRtl="true">
         <activity
